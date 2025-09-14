@@ -6,7 +6,7 @@ import User from './user.js';
 const app = express();
 const port = 3000;
 
-mongoose.connect('mongodb://localhost:27017/database').then(() => {
+mongoose.connect('mongodb://mongo:27017/database').then(() => {
     console.log('Successfully connected to MongoDB');
 }).catch(err => {
     console.error('Connection error', err);

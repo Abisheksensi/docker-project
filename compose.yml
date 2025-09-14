@@ -4,7 +4,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - "80:4000"
+      - "4000:80"
     depends_on:
       - mongo
 
@@ -20,7 +20,7 @@ services:
     image: mongo
     restart: always
     ports:
-      - "27018:27018"
+      - "27018:27017"
     volumes:
       - mongo_data:/data/db
 
