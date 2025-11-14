@@ -1,10 +1,9 @@
-
 services:
   frontend:
     build:
       context: ./frontend
     ports:
-      - "4000:80"
+      - "5174:80"
     depends_on:
       - mongo
 
