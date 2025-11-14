@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    options {
+        // This enables GitHub status checks (green tick / red cross)
+        githubNotify()
+    }
+
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         DOCKER_USERNAME = "abishekdesign"
@@ -57,6 +62,6 @@ pipeline {
     }
 
     triggers {
-        githubPush()
+        githubPush()   // triggers pipeline when GitHub sends webhook
     }
 }
