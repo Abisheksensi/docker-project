@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    options {
-        withChecks { }   // enables GitHub status checks
-    }
-
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
         DOCKER_USERNAME = "abishekdesign"
