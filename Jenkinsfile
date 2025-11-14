@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     options {
-        withChecks()   // enables GitHub green tick status reporting
+        withChecks { }   // enables GitHub status checks
     }
 
     environment {
