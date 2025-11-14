@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     options {
-        // This enables GitHub status checks (green tick / red cross)
-        githubNotify()
+        withChecks()   // enables GitHub green tick status reporting
     }
 
     environment {
@@ -62,6 +61,6 @@ pipeline {
     }
 
     triggers {
-        githubPush()   // triggers pipeline when GitHub sends webhook
+        githubPush()
     }
 }
