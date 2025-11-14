@@ -1,120 +1,65 @@
-import React, { useState } from 'react';
-import SignUp from './signup';
-import SignIn from './signin';
+import React from 'react';
+import './health.css';
 
-const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        minHeight: '100vh',
-        backgroundColor: '#f0f2f5',
-        fontFamily: 'Arial, sans-serif',
-        padding: '20px',
-        boxSizing: 'border-box'
-    },
-    header: {
-        fontSize: '2.5em',
-        color: '#333',
-        marginBottom: '20px',
-        textAlign: 'center'
-    },
-    buttonContainer: {
-        display: 'flex',
-        gap: '15px',
-        marginBottom: '30px'
-    },
-    button: {
-        padding: '12px 25px',
-        fontSize: '1em',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        fontWeight: 'bold',
-        transition: 'background-color 0.3s'
-    },
-    primaryButton: {
-        backgroundColor: '#007bff',
-        color: 'white',
-    },
-    secondaryButton: {
-        backgroundColor: '#6c757d',
-        color: 'white',
-    },
-    linkButton: {
-        background: 'none',
-        border: 'none',
-        color: '#007bff',
-        fontSize: '1em',
-        cursor: 'pointer',
-        marginTop: '20px'
-    },
-    formContainer: {
-        backgroundColor: 'white',
-        padding: '40px',
-        borderRadius: '10px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-        width: '100%',
-        maxWidth: '400px',
-        boxSizing: 'border-box'
-    }
-};
-
-function App() {
-    const [view, setView] = useState('home');
-
-    const handleViewChange = (newView) => {
-        setView(newView);
-    };
-
+export default function Home() {
     return (
-        <div style={styles.container}>
-            {view === 'home' && (
-                <>
-                    <h1 style={styles.header}>Welcome to Our Website!</h1>
-                    <div style={styles.buttonContainer}>
-                        <button 
-                            onClick={() => handleViewChange('signup')} 
-                            style={{ ...styles.button, ...styles.primaryButton }}
-                        >
-                            Sign Up
-                        </button>
-                        <button 
-                            onClick={() => handleViewChange('signin')} 
-                            style={{ ...styles.button, ...styles.secondaryButton }}
-                        >
-                            Sign In
-                        </button>
-                    </div>
-                </>
-            )}
-
-            {view === 'signup' && (
-                <div style={styles.formContainer}>
-                    <SignUp />
-                    <button 
-                        onClick={() => handleViewChange('home')} 
-                        style={styles.linkButton}
-                    >
-                        Back to Home
-                    </button>
+        <div className="health-app">
+            <header className="hero">
+                <div className="hero-inner">
+                    <h1 className="title">Healthy Living</h1>
+                    <p className="subtitle">Small changes. Big impact. Your guide to a healthier life.</p>
+                    <a className="cta" href="#tips">Get Tips</a>
                 </div>
-            )}
+                <img
+                    className="hero-image"
+                    alt="Healthy lifestyle"
+                    src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?w=1200&q=80&auto=format&fit=crop"
+                />
+            </header>
 
-            {view === 'signin' && (
-                <div style={styles.formContainer}>
-                    <SignIn />
-                    <button 
-                        onClick={() => handleViewChange('home')} 
-                        style={styles.linkButton}
-                    >
-                        Back to Home
-                    </button>
-                </div>
-            )}
+            <main className="container" id="tips">
+                <section className="cards">
+                    <article className="card">
+                        <img
+                            alt="Nutrition"
+                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=60&auto=format&fit=crop"
+                        />
+                        <h3>Nutrition</h3>
+                        <p>Eat a balanced diet rich in vegetables, fruits, whole grains and lean proteins.</p>
+                    </article>
+
+                    <article className="card">
+                        <img
+                            alt="Exercise"
+                            src="https://images.unsplash.com/photo-1554284126-aa88f22d8d57?w=800&q=60&auto=format&fit=crop"
+                        />
+                        <h3>Exercise</h3>
+                        <p>Aim for at least 30 minutes of moderate exercise most days of the week.</p>
+                    </article>
+
+                    <article className="card">
+                        <img
+                            alt="Mental health"
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=60&auto=format&fit=crop"
+                        />
+                        <h3>Mental Wellbeing</h3>
+                        <p>Practice mindfulness, take breaks, and connect with friends and family.</p>
+                    </article>
+                </section>
+
+                <section className="about">
+                    <h2>Simple Habits to Start Today</h2>
+                    <ul>
+                        <li>Drink more water — aim for 6–8 glasses a day.</li>
+                        <li>Walk after meals to aid digestion and improve circulation.</li>
+                        <li>Prioritize sleep — most adults need 7–9 hours.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer className="footer">
+                <p>© {new Date().getFullYear()} Healthy Living • Sample content for demo purposes</p>
+            </footer>
         </div>
     );
 }
-
-export default App;

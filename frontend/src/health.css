@@ -1,0 +1,36 @@
+/* Simple health-themed styles for single-page demo */
+:root{
+  --bg: #f6fbf8;
+  --card: #ffffff;
+  --accent: #2d9cdb;
+  --muted: #6b7280;
+  --max-width: 1100px;
+}
+
+*{box-sizing:border-box}
+body,html,#root{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#0f172a}
+.health-app .hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:40px;max-width:var(--max-width);margin:28px auto;border-radius:12px;background:linear-gradient(90deg,rgba(45,156,219,0.08),rgba(45,156,219,0.02));overflow:hidden}
+.health-app .hero-inner{flex:1;min-width:260px}
+.title{font-size:2.4rem;margin:0 0 10px;color:#05264d}
+.subtitle{margin:0 0 18px;color:var(--muted);font-size:1.05rem}
+.cta{text-decoration:none;background:var(--accent);color:white;padding:10px 18px;border-radius:8px;font-weight:600}
+.hero-image{width:420px;height:250px;object-fit:cover;border-radius:10px;flex-shrink:0}
+
+.container{max-width:var(--max-width);margin:30px auto;padding:0 20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.card{background:var(--card);border-radius:10px;padding:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06);text-align:center}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+.card h3{margin:6px 0;color:#07345a}
+.card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+.about{background:linear-gradient(180deg,white,white);padding:22px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+.about h2{margin-top:0}
+.about ul{margin:10px 0 0 20px;color:var(--muted)}
+
+.footer{text-align:center;padding:18px;color:var(--muted);font-size:0.95rem}
+
+@media (max-width:900px){
+  .cards{grid-template-columns:repeat(1,1fr)}
+  .hero{flex-direction:column;align-items:flex-start}
+  .hero-image{width:100%;height:200px}
+}
